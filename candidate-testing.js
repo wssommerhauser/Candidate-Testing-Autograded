@@ -43,11 +43,13 @@ function askQuestion() {
     //return candidateAnswers;
 }
 
-function gradeQuiz(candidateAnswersParam) {
+function gradeQuiz(candidateAnswers) {
+  
   let answeredCorrect = 0;
+  let gradeArray = candidateAnswers;
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   for(i = 0; i < candidateAnswers.length; i++){
-    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
+    if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()){
       console.log(`Question ${i + 1} - You answered: ${candidateAnswers[i]}. That is correct!`);
       answeredCorrect = answeredCorrect + 1;
     }
@@ -62,13 +64,13 @@ function gradeQuiz(candidateAnswersParam) {
   let grade = (answeredCorrect / quizQuestions) * 100;  //TODO 3.2 use this variable to calculate the candidates score.
   
 
-if (grade >= 80){
+  if (grade >= 80){
   console.log(`You scored ${grade}%. You Passed!`)
-}
-else{
+  }
+  else{
   console.log(`You scored ${grade}%. You failed the test.`)
-}
-  //return grade;
+  }
+  return grade;
 
   
 }
@@ -78,7 +80,7 @@ function runProgram() {
   // TODO 1.1c: Greet candidate using their name //
    console.log();
   askQuestion();
-  gradeQuiz(this.candidateAnswersParam);
+  gradeQuiz(candidateAnswers);
 }
 console.log(runProgram());
 // ----------- Don't write any code or change any code below this line ---------- //
