@@ -82,7 +82,7 @@ function runProgram() {
   askQuestion();
   gradeQuiz(candidateAnswers);
 }
-console.log(runProgram());
+//console.log(runProgram());
 // ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
   candidateName: candidateName,
